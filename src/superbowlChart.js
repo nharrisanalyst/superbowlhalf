@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { annotation,  annotationLabel } from 'd3-svg-annotation';
+import { annotation,  annotationLabel, annotationCalloutCurve } from 'd3-svg-annotation';
 
 export async function createChart(element){
    const data = await d3.csv('/data/superbowl_halftime_1.csv', (d)=>{
@@ -18,7 +18,7 @@ export async function createChart(element){
   
   const avgDiff = calculateAvg(data);
   const comebackData = data.filter(d=> d.halftime_win===false)
-  const averageCmebackDiff = calculateAvg(comebackData);
+  const averageComebackDiff = calculateAvg(comebackData);
 
    const teamNamesData = await d3.csv('/data/nfl.csv');
    console.log('ths is the data', teamNamesData)
@@ -61,7 +61,7 @@ export async function createChart(element){
    //                            .attr('cx', d=>xScale(d.home_team_score)).attr('cy',d=>yScale(d.sb_number))
    //                            .attr('r', 3).attr('fill', 'grey')
 
-   mainG.append('g').selectAll('.line-avg-main').data([averageCmebackDiff]).join('line')
+   mainG.append('g').selectAll('.line-avg-main').data([averageComebackDiff]).join('line')
                               .attr('class','.line-avg-main')
                               .attr('x1',d=>xScale(d)).attr('x2', d=> xScale(d))
                               .attr('y1', d=>yScale(0) ).attr('y2', -5)
@@ -103,8 +103,9 @@ export async function createChart(element){
    const kcAnnotation = [
       {
         note: {
-          label: "KC's 24 point Deficit was Historic, Second All Time., 13 more than average, and the largest deficit while being shut out.",
-          title: "KC's 24 point Deficit"
+          label: "This deficit was historic, second all time, 13 more than average, and the largest deficit while also being shut out.",
+          title: "KC's 24 point Deficit",
+          wrap:200
         },
         data:KCAnnoData[0],
         connector: {
@@ -127,9 +128,80 @@ const makeKCAnno = annotation().notePadding(0).type(kcType).accessors({
 
 mainG.append('g').attr('class', 'kc-annotation').call(makeKCAnno);
 
+//NE Patriots annotation
+
+
+const NEAnnoData = data.filter(d=>d.sb_number === 51);
+   const NEType = annotationLabel;
+   const NEAnnotation = [
+      {
+        note: {
+          label: "This deficit was twice as much as the average overall halftime defecit, and 3x larger than the average half time comeback. No team before than had overcame a 7 point halftime defecit.",
+          title: "New Englands 18 point Comeback Win",
+          wrap:200
+        },
+        data:NEAnnoData[0],
+        connector: {
+          end: "arrow",        // Can be none, or arrow or dot
+          type: "line",      // ?? don't know what it does
+          lineType : "vertical",    // ?? don't know what it does
+          //endScale: 2     // dot size
+        },
+        color: ["grey"],
+        dy: 150,
+        dx: -50
+
+      }
+   ]
+   
+const makeNEAnno = annotation().notePadding(0).type(NEType).accessors({
+   x: d => xScale(d.difference)-4,
+   y: d => yScale(d.sb_number) + 4,
+ }).annotations(NEAnnotation);
+
+mainG.append('g').attr('class', 'NE-annotation').call(makeNEAnno);
+
+//text for averages
 
 
 
+  //const averageComebackDiff = calculateAvg(comebackData);
+
+
+mainG.append('g').selectAll('.avg-diff-class').data([avgDiff]).join('text')
+                                              .attr('x', d=>xScale(d) +5).attr('y', yScale(0)-2).text('<- Avg Halftime Deficit')
+                                              .attr('fill', 'grey')
+                                              .style('font-size', '10px')
+
+mainG.append('g').selectAll('.avg-comeback-class').data([averageComebackDiff]).join('text')
+                                               .attr('x', d=>xScale(d) - 182.17 ).attr('y', yScale(0)-2).text('Avg Comback Win Halftime Deficit ->')
+                                               .attr('fill', 'grey')
+                                               .style('font-size', '10px')
+
+mainG.append('g').selectAll('.avg-diff-class').data([avgDiff]).join('text')
+                                               .attr('x', d=>xScale(d) +2).attr('y', -1).text(d=> "<-"+d.toFixed(1))
+                                               .attr('fill', 'grey')
+                                               .style('font-size', '10px')
+
+ mainG.append('g').selectAll('.avg-comeback-class').data([averageComebackDiff]).join('text')
+                                                .attr('x', d=>xScale(d)-28).attr('y', -1).text(d=>d.toFixed(1)+'->')
+                                                .attr('fill', 'grey')
+                                                .style('font-size', '10px')
+
+mainG.append('g').selectAll('.label-score').data(["Halftime Score"]).join('text')
+                                             .attr('x',-margin.l).attr('y', -12).text(d=>d)
+                                             .attr('fill', 'grey')
+                                             .style('font-size', '10px')
+
+mainG.append('g').selectAll('.label-score').data(["SB#"]).join('text')
+                                             .attr('x',-22).attr('y', -12).text(d=>d)
+                                             .attr('fill', 'grey')
+                                             .style('font-size', '10px')
+
+mainG.append('g').selectAll('.label-score').data(["SB HalfTime Score Difference"]).join('text')
+                                             .attr('x', width-145.75).attr('y', height-1).text(d=>d)
+                                             .attr('fill', 'grey')
+                                             .style('font-size', '10px')
 
 
 
