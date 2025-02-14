@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { annotation,  annotationLabel, annotationCalloutCurve } from 'd3-svg-annotation';
+import { legendColor } from 'd3-svg-legend';
 
 export async function createChart(element){
    const data = await d3.csv('/data/superbowl_halftime_1.csv', (d)=>{
@@ -137,7 +138,7 @@ const NEAnnoData = data.filter(d=>d.sb_number === 51);
       {
         note: {
           label: "This deficit was twice as much as the average overall halftime defecit, and 3x larger than the average half time comeback. No team before than had overcame a 7 point halftime defecit.",
-          title: "New Englands 18 point Comeback Win",
+          title: "New Englands 18 point Halftime Comeback Win",
           wrap:200
         },
         data:NEAnnoData[0],
@@ -203,6 +204,14 @@ mainG.append('g').selectAll('.label-score').data(["SB HalfTime Score Difference"
                                              .attr('fill', 'grey')
                                              .style('font-size', '10px')
 
+//legend                                       
+const legendScale = d3.scaleOrdinal(['team up at half won game', 'team down at half won game', 'tied'],['red','green','grey'])
+
+const legendOrdinal = legendColor().shape('path',d3.symbol().type(d3.symbolCircle).size(25)()).shapePadding(5).scale(legendScale);
+
+mainG.append('g').attr('class', 'legend').attr('transform', `translate(${width-155},${height-75})`).style('font-size', '10px').call(legendOrdinal);
+d3.select('.legend').selectAll('.label').attr('fill','grey')
+d3.select('.legend').selectAll('path').attr('transform','translate(0,1.65)')
 
 
 }
