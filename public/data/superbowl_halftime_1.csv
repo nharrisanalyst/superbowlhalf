@@ -1,7 +1,7 @@
 away_team_name,home_team_name,year,sb_number,away_team_score,home_team_score,difference,halftime_win
 Kansas City Chiefs,Philadelphia Eagles,2025,59,0,24,24,yes
 San Francisco 49ers,Kansas City Chiefs,2024,58,10,3,7,no
-Kansas City Chiefs,Philadelphia Eagles,2023,57,14,24,7,no
+Kansas City Chiefs,Philadelphia Eagles,2023,57,14,24,10,no
 Los Angeles Rams,Cincinnati Bengals,2022,56,13,10,3,yes
 Kansas City Chiefs,Tampa Bay Buccaneers,2021,55,6,21,15,yes
 San Francisco 49ers,Kansas City Chiefs,2020,54,10,10,0,null
