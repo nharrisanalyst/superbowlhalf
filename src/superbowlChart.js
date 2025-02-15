@@ -162,6 +162,39 @@ const makeNEAnno = annotation().notePadding(0).type(NEType).accessors({
 
 mainG.append('g').attr('class', 'NE-annotation').call(makeNEAnno);
 
+//NE Patriots annotation
+
+
+const AVGAnnoData = data.filter(d=>d.sb_number === 13);
+   const AVGType = annotationLabel;
+   const AVGAnno = [
+      {
+        note: {
+          label: "",
+          title: "The Most common half time defecit comeback is 7 points.",
+          wrap:200
+        },
+        data:AVGAnnoData[0],
+        connector: {
+          end: "arrow",        // Can be none, or arrow or dot
+          type: "line",      // ?? don't know what it does
+          lineType : "vertical",    // ?? don't know what it does
+          //endScale: 2     // dot size
+        },
+        color: ["grey"],
+        dy: 80,
+        dx: 75
+
+      }
+   ]
+   
+const makeAVGAnno = annotation().notePadding(0).type(AVGType).accessors({
+   x: d => xScale(d.difference)+ 8,
+   y: d => yScale(d.sb_number) + 4,
+ }).annotations(AVGAnno);
+
+mainG.append('g').attr('class', 'AVG-annotation').call(makeAVGAnno);
+
 //text for averages
 
 
