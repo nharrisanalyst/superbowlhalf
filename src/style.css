@@ -94,3 +94,26 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#title{
+  width:1000px;
+  padding-left:25px;
+}
+
+#mainTitle{
+  font-size:28px;
+  text:bold;
+  text-align: left;
+  line-height: 32px;
+  margin-bottom: 16px;
+ 
+}
+
+#subTitle{
+  font-size:16px;
+  color:grey;
+  text:bold;
+  text-align: left;
+  line-height: 18px;
+  margin-bottom:25px;
+}
