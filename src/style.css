@@ -115,5 +115,27 @@ button:focus-visible {
   text:bold;
   text-align: left;
   line-height: 18px;
-  margin-bottom:25px;
+  margin-bottom: 16px;
+}
+
+#authorTitle{
+  text-align: left;
+  margin-bottom:36px;
+  color:grey;
+}
+
+#me{
+  color:grey;
+  text-decoration: underline;
+}
+
+a{
+  color:grey;
+  text-decoration: underline;
+}
+
+.sm-link{
+  display:inline-block;
+  height:25px;
+  width:25px;
 }
