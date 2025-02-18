@@ -1,0 +1,60 @@
+away_team_name,home_team_name,year,sb_number,away_team_score,home_team_score,difference,halftime_win
+Kansas City Chiefs,Philadelphia Eagles,2025,59,0,24,24,yes
+San Francisco 49ers,Kansas City Chiefs,2024,58,10,3,7,no
+Kansas City Chiefs,Philadelphia Eagles,2023,57,14,24,10,no
+Los Angeles Rams,Cincinnati Bengals,2022,56,13,10,3,yes
+Kansas City Chiefs,Tampa Bay Buccaneers,2021,55,6,21,15,yes
+San Francisco 49ers,Kansas City Chiefs,2020,54,10,10,0,null
+New England Patriots,Los Angeles Rams,2019,53,3,0,3,yes
+Philadelphia Eagles,New England Patriots,2018,52,22,12,10,yes
+New England Patriots,Atlanta Falcons,2017,51,3,21,18,no
+Carolina Panthers,Denver Broncos,2016,50,7,13,6,yes
+New England Patriots,Seattle Seahawks,2015,49,14,14,0,null
+Seattle Seahawks,Denver Broncos,2014,48,22,0,22,yes
+Baltimore Ravens,San Francisco 49ers,2013,47,21,6,15,yes
+New York Giants,New England Patriots,2012,46,9,10,1,no
+Pittsburgh Steelers,Green Bay Packers,2011,45,10,21,11,yes
+New Orleans Saints,Indianapolis Colts,2010,44,6,10,4,no
+Pittsburgh Steelers,Arizona Cardinals,2009,43,17,7,10,yes
+New York Giants,New England Patriots,2008,42,3,7,4,no
+Indianapolis Colts,Chicago Bears,2007,41,16,14,2,yes
+Seattle Seahawks,Pittsburgh Steelers,2006,40,3,7,4,yes
+New England Patriots,Philadelphia Eagles,2005,39,7,7,0,null
+Carolina Panthers,New England Patriots,2004,38,10,14,4,yes
+Oakland Raiders,Tampa Bay Buccaneers,2003,37,3,20,17,yes
+St. Louis Rams,New England Patriots,2002,36,3,14,11,yes
+Baltimore Ravens,New York Giants,2001,35,10,0,10,yes
+St. Louis Rams,Tennessee Titans,2000,34,9,0,9,yes
+Denver Broncos,Atlanta Falcons,1999,33,17,6,11,yes
+Green Bay Packers,Denver Broncos,1998,32,14,17,3,yes
+New England Patriots,Green Bay Packers,1997,31,14,27,13,yes
+Dallas Cowboys,Pittsburgh Steelers,1996,30,13,7,6,yes
+San Diego Chargers,San Francisco 49ers,1995,29,10,28,18,yes
+Dallas Cowboys,Buffalo Bills,1994,28,6,13,7,no
+Buffalo Bills,Dallas Cowboys,1993,27,10,28,18,yes
+Washington Redskins,Buffalo Bills,1992,26,17,0,17,yes
+Buffalo Bills,New York Giants,1991,25,12,10,2,no
+San Francisco 49ers,Denver Broncos,1990,24,27,3,24,yes
+Cincinnati Bengals,San Francisco 49ers,1989,23,3,3,0,null
+Washington Redskins,Denver Broncos,1988,22,35,10,25,yes
+Denver Broncos,New York Giants,1987,21,10,9,1,no
+Chicago Bears,New England Patriots,1986,20,23,3,20,yes
+Miami Dolphins,San Francisco 49ers,1985,19,16,28,12,yes
+Washington Redskins,Los Angeles Raiders,1984,18,3,21,18,yes
+Miami Dolphins,Washington Redskins,1983,17,17,10,7,no
+San Francisco 49ers,Cincinnati Bengals,1982,16,20,0,20,yes
+Oakland Raiders,Philadelphia Eagles,1981,15,14,3,11,yes
+Los Angeles Rams,Pittsburgh Steelers,1980,14,13,10,3,no
+Pittsburgh Steelers,Dallas Cowboys,1979,13,21,14,7,yes
+Dallas Cowboys,Denver Broncos,1978,12,13,0,13,yes
+Oakland Raiders,Minnesota Vikings,1977,11,16,0,16,yes
+Dallas Cowboys,Pittsburgh Steelers,1976,10,10,7,3,no
+Pittsburgh Steelers,Minnesota Vikings,1975,9,2,0,2,yes
+Minnesota Vikings,Miami Dolphins,1974,8,0,17,17,yes
+Miami Dolphins,Washington Redskins,1973,7,14,0,14,yes
+Dallas Cowboys,Miami Dolphins,1972,6,10,3,7,yes
+Baltimore Colts,Dallas Cowboys,1971,5,6,13,7,no
+Minnesota Vikings,Kansas City Chiefs,1970,4,0,16,16,yes
+New York Jets,Baltimore Colts,1969,3,7,0,7,yes
+Green Bay Packers,Oakland Raiders,1968,2,16,7,9,yes
+Kansas City Chiefs,Green Bay Packers,1967,1,10,14,4,yes
