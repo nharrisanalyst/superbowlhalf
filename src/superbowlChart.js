@@ -3,7 +3,7 @@ import { annotation,  annotationLabel, annotationCalloutCurve } from 'd3-svg-ann
 import { legendColor } from 'd3-svg-legend';
 
 export async function createChart(element){
-   const data = await d3.csv('/data/superbowl_halftime_1.csv', (d)=>{
+   const data = await d3.csv('data/superbowl_halftime_1.csv', (d)=>{
       return {
          away_team: d.away_team_name,
          home_team:d.home_team_name,
@@ -21,7 +21,7 @@ export async function createChart(element){
   const comebackData = data.filter(d=> d.halftime_win===false)
   const averageComebackDiff = calculateAvg(comebackData);
 
-   const teamNamesData = await d3.csv('/data/nfl.csv');
+   const teamNamesData = await d3.csv('data/nfl.csv');
    console.log('ths is the data', teamNamesData)
    console.log(data)
    const teamNames = new Map();
