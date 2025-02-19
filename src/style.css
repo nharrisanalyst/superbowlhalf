@@ -134,6 +134,12 @@ a{
   text-decoration: underline;
 }
 
+#links{
+  width:1000px;
+  padding-left:25px;
+  text-align: center;
+}
+
 .sm-link{
   display:inline-block;
   height:25px;
