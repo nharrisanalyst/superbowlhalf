@@ -139,3 +139,26 @@ a{
   height:25px;
   width:25px;
 }
+
+#newsletter-title{
+  line-height: 52px;
+  color:grey;
+}
+
+#tweet-this{
+color:grey;
+margin-left:25px;
+width:25px;
+display: inline-block;
+position:relative; 
+top:-5px
+}
+
+#reddit-this{
+  color:grey;
+  margin-left:25px;
+  
+  display: inline-block;
+  position:relative; 
+  top:-5px
+}
