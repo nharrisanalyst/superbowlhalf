@@ -3,7 +3,7 @@ import { annotation,  annotationLabel, annotationCalloutCurve } from 'd3-svg-ann
 import { legendColor } from 'd3-svg-legend';
 
 export async function createChart(element){
-   const data = await d3.csv('data/superbowl_halftime_1.csv', (d)=>{
+   const data = await d3.csv('/data/superbowl_halftime_1.csv', (d)=>{
       return {
          away_team: d.away_team_name,
          home_team:d.home_team_name,
@@ -21,7 +21,7 @@ export async function createChart(element){
   const comebackData = data.filter(d=> d.halftime_win===false)
   const averageComebackDiff = calculateAvg(comebackData);
 
-   const teamNamesData = await d3.csv('data/nfl.csv');
+   const teamNamesData = await d3.csv('/data/nfl.csv');
    console.log('ths is the data', teamNamesData)
    console.log(data)
    const teamNames = new Map();
@@ -137,7 +137,7 @@ const NEAnnoData = data.filter(d=>d.sb_number === 51);
    const NEAnnotation = [
       {
         note: {
-          label: "This deficit was twice as much as the average overall halftime defecit, and 3x larger than the average half time comeback. No team before than had overcame a 7 point halftime defecit.",
+          label: "This deficit was twice as much as the average overall halftime deficit, and 3x larger than the average half time comeback. No team before than had overcame a 7 point halftime deficit.",
           title: "New Englands 18 point Halftime Comeback Win",
           wrap:200
         },
@@ -171,7 +171,7 @@ const AVGAnnoData = data.filter(d=>d.sb_number === 13);
       {
         note: {
           label: "",
-          title: "The Most common half time defecit comeback is 7 points.",
+          title: "The Most common half time deficit comeback is 7 points.",
           wrap:200
         },
         data:AVGAnnoData[0],
